@@ -6,14 +6,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clock</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap");
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: gray;
+            color: white;
+            border: 6px solid black;
+            height: 171px;
+            width: 455px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #clock {
+            font-family: "Orbitron", sans-serif;
+            font-size: 2.7rem;
+            cursor: context-menu;
+            padding: 20px;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
         <span id="clock"> </span>
     </div>
-    <script src="script.js"></script>
+    <script>
+        setInterval(function () {
+            var d = new Date();
+            var hours = d.getHours();
+            var minutes = d.getMinutes();
+            var seconds = d.getSeconds();
+            am_pm(hours);
+            document.getElementById("clock").innerHTML = (hours + " : " + minutes + " : " + seconds + " " + a);
+        }, 1000);
+        let a;
+        function am_pm(hours) {
+            if (hours < 12) {
+                a = "AM"
+            }
+            else {
+                a = "PM"
+            }
+        }
+    </script>
 </body>
 
 </html>
