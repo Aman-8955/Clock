@@ -1,3 +1,3 @@
 # Clock
 For view page click here:-
-https://huntgamer.github.io/Clock/
+https://Aman-8955.github.io/Clock/
